@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finger Warmer</title>
+    <link rel="icon" type="image/png" href="/image/ice1.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- for fancy welcome font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <!-- actual game --> 
+    <div id="meter">COLD METER</div>
+        <div id="hpBar"></div>
+            <!-- HP bar made using CSS to make it a full HP bar -->
+            <div id="fullHpBar"></div>
+            <!-- ice image will change when Hp = 0 -->
+            <img src="image/ice3.png" id= "ice" class="shake-slow shake-constant">
+
+            <div id="newWord">READY?</div>
+            <!-- user input -->
+            <input type="text" id="userInput" placeholder="Type here!"> </input>
+
+            <!-- countdown timer using js -->
+            <div id="timer" class="counter"> Time: <span id= "sec">60 secs</span> </div>
+
+        <!-- display lose message --> 
+        <div id="lose" onClick="document.location.reload(true)">
+
+        </div>
+        <!-- display win message --> 
+        <div id="win" onClick="document.location.reload(true)">
+        </div>
+
+    <!-- game instructions -->
+        <div id="instructions">
+            <div class ="intro">
+                <div id= "introTitle">Your fingers are getting cold!</div> <br>
+                    <div class ="introBorder">
+                        For the next <span class="sixty">60 seconds</span> type the words on the screen to destroy the cold🧊🧊<br> <br>
+                        Click anywhere to begin!
+                    </div>
+            </div>
+        </div>
+
+    <!-- game intro page -->
+        <div id="titlePage">
+            <div class="main">
+                <div class="welcome" >time to</div>
+                <div class="gameName">warm up your fingers!</div>
+            </div>
+        </div>
+</div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

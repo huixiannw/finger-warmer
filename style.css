@@ -1,0 +1,364 @@
+body {
+	margin: 0;
+	background-color: #f6d7b0;
+}
+
+.container {
+	display: block;
+	width: 50%;
+	/*border: 1px solid black; */
+	margin: auto;
+	text-align: center;
+	font-family: "poppins", sans-serif;
+	margin-top:-10px;
+}
+
+/* game intro page */
+
+#titlePage {
+ display: block;
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #f6d7b0;
+ cursor: pointer;
+ z-index: 4;
+ /* for fade transition */
+ opacity: 1;
+ transition: opacity 0.5s; 
+} 
+
+#titlePage.fade {
+	opacity: 0;
+}
+
+.main {
+	text-align: center;
+	padding-top: 10px;
+	font-size: 30px;
+	position: relative;
+	top: 45%;
+	left: 50%;
+	color: #FEF8F0;
+	transform: translate(-50%,-50%);
+  
+}
+
+.welcome {
+	font-size: 20px;
+	color: #A4804E;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin-bottom: 0px;
+}
+
+.gameName {
+	font-family: "Sacramento", cursive;
+  	font-size: 100px;
+	text-transform: lowercase;
+	margin-top: 0px;
+	color: FEF8F0;
+	letter-spacing: 1.5px;
+}
+
+/* game instructions page */
+
+#instructions {
+ 	display: block;
+ 	position: fixed;
+ 	width: 100%;
+ 	height: 100%;
+ 	top: 0;
+ 	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(241,216,181,0.9);
+	cursor: pointer;
+	z-index: 3;
+}
+#introTitle{
+	font-style: bold;
+	font-size: 20px;
+	color: #3B3D73;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+.introBorder{
+	border: 0.5px solid #A4804E;
+	background-color: rgba(241,216,181,0.5);
+	box-sizing: border-box;
+	padding: 35px;
+	font-size: 25px;
+	font-weight: lighter;
+}
+
+.intro {
+	text-align: center;
+	width: 800px;
+	font-size: 30px;
+	position: relative;
+  	top: 45%;
+  	left: 50%;
+  	color: #A4804E;
+  	transform: translate(-50%,-50%);
+}
+
+.sixty {
+	text-decoration: underline;
+}
+
+/* HP bar */
+
+#fullHpBar {
+	position: relative;
+	margin: auto;
+	margin-top: -20px;
+	width:300px;
+	height: 40px;
+	border: 2px solid #5DBDFF;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	background-color: #EAF9FE;
+	z-index:0;
+}
+
+#hpBar {
+	position: relative;
+	margin: auto;
+	width:300px;
+	height: 40px;
+	box-sizing: border-box;
+	border-radius: 3px;
+	padding-top: 10px;
+	background-color: #C2F2FF;
+	color: #5DBDFF;
+	transform: translateY(22px);
+	z-index: 1;
+}
+
+#meter {
+	position: relative;
+	margin: auto;
+	width:300px;
+	height: 40px;
+	color: #5DBDFF;
+	transform: translateY(73px);
+	z-index: 2;
+}
+
+/* ice blocks */
+#ice {
+	display: block;
+	position: relative;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin:auto;
+
+}
+
+/* game display */
+
+#newWord {
+	margin-top: 30px;
+	font-size: 38px;
+	font-family: "Archivo Black", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color:#5DBDFF;
+}
+
+#userInput {
+	display: none;
+	margin:auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-size: 20px;
+	width: 48%;
+	border-radius: 5px;
+	padding: 7px 20px 7px 20px;
+	background-color: #FEF8F0;
+	border: 2px solid #A4804E;
+}
+
+.counter {
+	display: inline-block;
+	box-sizing: border-box;
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: #A4804E;
+}
+
+/* shaking for wrong input */
+.shake-horizontal {
+	display: inherit;
+	transform-origin: center center; }
+  
+	@keyframes shake-horizontal {
+		2% {
+		  transform: translate(-6px, 0) rotate(0); }
+		4% {
+		  transform: translate(9px, 0) rotate(0); }
+		6% {
+		  transform: translate(-6px, 0) rotate(0); }
+		8% {
+		  transform: translate(-2px, 0) rotate(0); }
+		10% {
+		  transform: translate(8px, 0) rotate(0); }
+		12% {
+		  transform: translate(-6px, 0) rotate(0); }
+		14% {
+		  transform: translate(0px, 0) rotate(0); }
+		16% {
+		  transform: translate(-1px, 0) rotate(0); }
+		18% {
+		  transform: translate(9px, 0) rotate(0); }
+		20% {
+		  transform: translate(-4px, 0) rotate(0); }
+		22% {
+		  transform: translate(-6px, 0) rotate(0); }
+		24% {
+		  transform: translate(-5px, 0) rotate(0); }
+		26% {
+		  transform: translate(-9px, 0) rotate(0); }
+		28% {
+		  transform: translate(-4px, 0) rotate(0); }
+		30% {
+		  transform: translate(2px, 0) rotate(0); }
+		32% {
+		  transform: translate(0px, 0) rotate(0); }
+		34% {
+		  transform: translate(0px, 0) rotate(0); }
+		36% {
+		  transform: translate(1px, 0) rotate(0); }
+		38% {
+		  transform: translate(-1px, 0) rotate(0); }
+		40% {
+		  transform: translate(0px, 0) rotate(0); }
+		42% {
+		  transform: translate(1px, 0) rotate(0); }
+		44% {
+		  transform: translate(-8px, 0) rotate(0); }
+		46% {
+		  transform: translate(-8px, 0) rotate(0); }
+		48% {
+		  transform: translate(8px, 0) rotate(0); }
+		50% {
+		  transform: translate(3px, 0) rotate(0); }
+		52% {
+		  transform: translate(-4px, 0) rotate(0); }
+		54% {
+		  transform: translate(3px, 0) rotate(0); }
+		56% {
+		  transform: translate(-8px, 0) rotate(0); }
+		58% {
+		  transform: translate(0px, 0) rotate(0); }
+		60% {
+		  transform: translate(-9px, 0) rotate(0); }
+		62% {
+		  transform: translate(-4px, 0) rotate(0); }
+		64% {
+		  transform: translate(2px, 0) rotate(0); }
+		66% {
+		  transform: translate(1px, 0) rotate(0); }
+		68% {
+		  transform: translate(-7px, 0) rotate(0); }
+		70% {
+		  transform: translate(-8px, 0) rotate(0); }
+		72% {
+		  transform: translate(5px, 0) rotate(0); }
+		74% {
+		  transform: translate(-7px, 0) rotate(0); }
+		76% {
+		  transform: translate(6px, 0) rotate(0); }
+		78% {
+		  transform: translate(-6px, 0) rotate(0); }
+		80% {
+		  transform: translate(4px, 0) rotate(0); }
+		82% {
+		  transform: translate(-8px, 0) rotate(0); }
+		84% {
+		  transform: translate(-3px, 0) rotate(0); }
+		86% {
+		  transform: translate(2px, 0) rotate(0); }
+		88% {
+		  transform: translate(-1px, 0) rotate(0); }
+		90% {
+		  transform: translate(1px, 0) rotate(0); }
+		92% {
+		  transform: translate(-5px, 0) rotate(0); }
+		94% {
+		  transform: translate(-8px, 0) rotate(0); }
+		96% {
+		  transform: translate(0px, 0) rotate(0); }
+		98% {
+		  transform: translate(-8px, 0) rotate(0); }
+		0%, 100% {
+		  transform: translate(0, 0) rotate(0); } }
+	  
+	  .shake-horizontal.shake-constant {
+		animation-name: shake-horizontal;
+		animation-duration: 500ms;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	  }
+
+#win {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(241,216,181,0.95);
+	cursor: pointer;
+	z-index: 2;
+}
+	  
+#win span {
+	font-size: 90px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 25px;
+	color: #A4804E;
+	text-align: center;
+	transform: translate(-50%,-50%);
+	z-index: 1;
+}
+
+#lose {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: rgba(194,242,255,0.85);
+	cursor: pointer;
+	z-index: 2;
+  }
+  
+#lose span {
+	font-size: 90px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 25px;
+	color: #31475a;
+	text-align: center;
+	font-style: bold;
+	transform: translate(-50%,-50%);
+	z-index: 1;
+  }
