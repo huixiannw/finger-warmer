@@ -61,7 +61,7 @@ body {
   	font-size: 100px;
 	text-transform: lowercase;
 	margin-top: 0px;
-	color: FEF8F0;
+	color: #FEF8F0;
 	letter-spacing: 1.5px;
 }
 
@@ -334,6 +334,18 @@ body {
 	z-index: 1;
 }
 
+#winTitle span {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	font-family: "Sacramento", cursive;
+  	font-size: 100px;
+	color: #A4804E;
+	text-align: center;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+}
+
 #lose {
 	position: fixed;
 	display: none;
@@ -361,4 +373,19 @@ body {
 	font-style: bold;
 	transform: translate(-50%,-50%);
 	z-index: 1;
+  }
+
+#loseTitle span {
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	font-family: "Sacramento", cursive;
+  	font-size: 100px;
+	margin-top: 0px;
+	color: #31475a;
+	letter-spacing: 1.5px;
+	text-align: center;
+	font-style: bold;
+	transform: translate(-50%,-50%);
+	z-index: 3;
   }

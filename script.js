@@ -49,10 +49,10 @@ var startGame = function (event) {
     setTimeout(countDown,2000, 2);
     setTimeout(countDown,3250, 1);
     setTimeout(displayInput, 4650);
-    setTimeout(countDown,4500, "GO!");
+    setTimeout(countDown,4500, "Start typing!");
     //timer function
     setTimeout(timeChecker,5000);
-    setTimeout(countDown,5750, getWord());
+    setTimeout(countDown,5150, getWord());
     //restart event listener again after 60 seconds
     setTimeout(start,60000);
 }
@@ -71,7 +71,8 @@ var timeChecker = function (){
             //disable input
             document.getElementById("userInput").style.display= "none";
             //add message overlay : fingers are still cold
-            loserMessage ("AW SNAP! <br> Guess your fingers are still cold🧊🧊 <br> Click anywhere to keep warming up your fingers.");
+            loserMessageTitle ("Aw snap!");
+            loserMessage ("<br> Guess your fingers are still cold🧊🧊 <br> Click anywhere to keep warming up your fingers.");
             //pause countdown music
             audio.pause();
             // add losing music
@@ -79,7 +80,8 @@ var timeChecker = function (){
             lose.play();
         } else if ((seconds >= 1) && iceBroken ==3) {
             clearInterval(runTimer);
-            winnerMessage ("YAY! <br> Your fingers are now warmed up and ready to go🔥🔥<br> Click anywhere to keep warming up your fingers.");
+            winnerMessageTitle ("Yay!");
+            winnerMessage ("<br> Your fingers are now warmed up and ready to go🔥🔥<br> Click anywhere to keep warming up your fingers.");
             //pause countdown music
             audio.pause();
             document.getElementById("userInput").style.display= "none";
@@ -188,10 +190,29 @@ var userInput = document.getElementById('userInput').addEventListener('change', 
 start ();
 
 //write a function to display winner message as an overlay using DOM manipulation
+var winnerMessageTitle = function (result) {
+    // create a span element
+    var message = document.createElement("span");
+    // span text
+    message.innerHTML = result;
+    // get document ID by overlay
+    var overlay = document.getElementById("winTitle");
+    //append span element to overlay div
+    overlay.appendChild(message);
+    // div display will turn from none to ficeblock
+    overlay.style.display = "block";
+    // add click event listener to overlay display, and make display back to none.
+    document.getElementById("winTitle").addEventListener("click", function () {
+        overlay.style.display = "none";
+        overlay.removeChild(message);
+    })
+}
+
+//write a function to display winner message as an overlay using DOM manipulation
 var winnerMessage = function (result) {
     // create a span element
     var message = document.createElement("span");
-    // span text will be testing testing
+    // span text
     message.innerHTML = result;
     // get document ID by overlay
     var overlay = document.getElementById("win");
@@ -211,7 +232,7 @@ var winnerMessage = function (result) {
 var loserMessage = function (result) {
 // create a span element
 var message = document.createElement("span");
-// span text will be testing testing
+// span text
 message.innerHTML = result;
 // get document ID by overlay
 var overlay = document.getElementById("lose");
@@ -225,3 +246,22 @@ document.getElementById("lose").addEventListener("click", function () {
     overlay.removeChild(message);
 })
 }
+
+//write a function to display loser  message as overlay. should be using DOM manipulation and query selector to create overall inlays
+var loserMessageTitle = function (result) {
+    // create a span element
+    var message = document.createElement("span");
+    // span text 
+    message.innerHTML = result;
+    // get document ID by overlay
+    var overlay = document.getElementById("loseTitle");
+    //append span element to overlay div
+    overlay.appendChild(message);
+    // div display will become block
+    overlay.style.display = "block";
+    // add click event listener to overlay display, and make display back to none.
+    document.getElementById("loseTitle").addEventListener("click", function () {
+        overlay.style.display = "none";
+        overlay.removeChild(message);
+    })
+    }
