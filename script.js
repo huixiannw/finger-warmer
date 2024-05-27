@@ -28,7 +28,7 @@ var start = function (){
 // function for audio when game start
 var audio = new Audio('music/countdown.mp3');
 
-//writing a countDown function with 3, 2, 1, go! as argumxent, followed by new words
+//writing a countDown function with 3, 2, 1, go! as arguement, followed by new words
 var countDown = function (second) {
     document.getElementById("newWord").innerHTML= second;
 }
@@ -156,7 +156,7 @@ var decreaseHp = function () {
 // global variable to keep track of ice broken
 var iceBroken = 0 ;
 
- // function to check if HP is zero. if HP is Zero, refresh HP and put in new ICE.
+ // function to check if HP is zero. if HP is Zero, refresh HP and reduce one ice.
 var checkHp = function () {
     //if HP = 0..
     if (parseInt(getComputedStyle(document.getElementById("hpBar")).width) == 0) {
@@ -189,7 +189,7 @@ var userInput = document.getElementById('userInput').addEventListener('change', 
 //enable event listener
 start ();
 
-//write a function to display winner message as an overlay using DOM manipulation
+//write a function to display winner message as an overlay
 var winnerMessageTitle = function (result) {
     // create a span element
     var message = document.createElement("span");
@@ -208,7 +208,7 @@ var winnerMessageTitle = function (result) {
     })
 }
 
-//write a function to display winner message as an overlay using DOM manipulation
+//write a function to display winner message as an overlay
 var winnerMessage = function (result) {
     // create a span element
     var message = document.createElement("span");
@@ -228,7 +228,7 @@ var winnerMessage = function (result) {
 }
 
 
-//write a function to display loser  message as overlay. should be using DOM manipulation and query selector to create overall inlays
+//write a function to display loser  message as overlay
 var loserMessage = function (result) {
 // create a span element
 var message = document.createElement("span");
@@ -247,7 +247,7 @@ document.getElementById("lose").addEventListener("click", function () {
 })
 }
 
-//write a function to display loser  message as overlay. should be using DOM manipulation and query selector to create overall inlays
+//write a function to display loser  message as overlay
 var loserMessageTitle = function (result) {
     // create a span element
     var message = document.createElement("span");
